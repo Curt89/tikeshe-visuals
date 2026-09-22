@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tikeshe Visuals | Photography Rates & Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init({
+            publicKey: "98hsHeiyvwMFxmTCP",
+          });
+       })();
+    </script>
+
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --bg-card-hover: #1c1c1c;
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa8c2c;
+            --text-main: #f5f5f5;
+            --text-muted: #a3a3a3;
+            --border-color: rgba(212, 175, 55, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand-title {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .logo-container i {
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-family: 'Cinzel', serif;
+            line-height: 1.2;
+        }
+
+        .logo-subtext {
+            font-size: 0.75rem;
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .btn-nav-book {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-nav-book:hover {
+            background: var(--gold);
+            color: var(--bg-dark);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--gold);
+        }
+
+        /* Hero Section matching photo style */
+        header.hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.7), var(--bg-dark)), 
+                        url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+            font-style: italic;
+            font-family: 'Cinzel', serif;
+        }
+
+        .hero-brand-line {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+
+        .hero-brand-line i {
+            font-size: 1.2rem;
+        }
+
+        .hero-brand-line span {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+            color: var(--text-main);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--bg-dark);
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--text-main);
+            color: var(--text-main);
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* Hero Image Grid matching photo */
+        .hero-image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 1rem;
+        }
+
+        .hero-img-card {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .hero-img-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            min-height: 180px;
+        }
+
+        .hero-img-card.tall {
+            grid-row: span 2;
+            min-height: 380px;
+        }
+
+        .hero-badge-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1.2rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            grid-column: span 2;
+        }
+
+        .hero-badge-card i {
+            color: var(--gold);
+            font-size: 1.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .hero-badge-card h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .hero-badge-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Section Layouts */
+        section {
+            padding: 6rem 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-tag {
+            color: var(--gold);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        /* About Creator Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image-wrapper img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .about-image-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            z-index: -1;
+        }
+
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .feature-item i {
+            color: var(--gold);
+        }
+
+        /* Rates / Pricing Section */
+        .pricing-section {
+            background: linear-gradient(to bottom, var(--bg-dark), #0f0f0f);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            background: var(--bg-card-hover);
+        }
+
+        .pricing-card.popular {
+            border-color: var(--gold);
+            background: var(--bg-card-hover);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--bg-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .pricing-tier {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .locations-tag {
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .pricing-features li i {
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+
+        .btn-pricing {
+            width: 100%;
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 0.8rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            letter-spacing: 1px;
+        }
+
+        .pricing-card:hover .btn-pricing, .pricing-card.popular .btn-pricing {
+            background: var(--gold);
+            color: var(--bg-dark);
+        }
+
+        /* Portfolio Section */
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            position: relative;
+            height: 320px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 1.5rem 1.5rem;
+            background: linear-gradient(to top, rgba(10,10,10,0.95), transparent);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .portfolio-category {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .portfolio-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Travel Info Banner */
+        .travel-info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 8px;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .info-card i {
+            font-size: 2rem;
+            color: var(--gold);
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .info-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Contact & Booking Section */
+        .contact-section {
+            background: radial-gradient(circle at center, #141414 0%, var(--bg-dark) 100%);
+        }
+
+        .contact-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 3.5rem;
+        }
+
+        .contact-form-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.9rem 1rem;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            grid-column: span 2;
+            background: var(--gold);
+            color: var(--bg-dark);
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .btn-submit:hover {
+            background: var(--gold-light);
+        }
+
+        .social-connect {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            color: var(--gold);
+        }
+
+        .social-link i {
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-quote {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+            .about-grid, .travel-info-container {
+                grid-template-columns: 1fr;
+            }
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            .btn-submit {
+                grid-column: span 1;
+            }
+            .contact-wrapper {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#" class="logo-container">
+            <i class="fa-solid fa-camera-retro"></i>
+            <div class="logo-text-group">
+                <span class="logo-text">TIKESHE VISUALS</span>
+                <span class="logo-subtext">RAYMES ANGELO ENTERO</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#rates">Rates</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#contact" class="btn-nav-book">Book Session</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="location-badge">
+                    <i class="fa-solid fa-location-dot"></i> New Town, North Dakota
+                </div>
+                <h1>Photography <span>Rates & Memories</span></h1>
+                
+                <div class="hero-brand-line">
+                    <i class="fa-solid fa-camera"></i>
+                    <span>TIKESHE VISUALS</span>
+                    <span style="color: var(--gold); font-style: normal;">|</span>
+                    <span>Raymes Angelo Entero</span>
+                </div>
+
+                <p class="hero-subtitle">
+                    Whether it's portraits, sports, family sessions, couples, events, or special moments—let's capture it! Turn your precious fleeting moments into timeless works of art.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#rates" class="btn-primary">Explore Rates <i class="fa-solid fa-arrow-down"></i></a>
+                    <a href="#portfolio" class="btn-outline">View Portfolio <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-image-grid">
+                <div class="hero-img-card tall">
+                   <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" alt="Tikeshe Visuals Work">
+                </div>
+                <div class="hero-img-card">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800" alt="Sunset Couple">
+                </div>
+                <div class="hero-img-card">
+                    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=80&w=800" alt="Sports Ball">
+                </div>
+                <div class="hero-badge-card">
+                    <i class="fa-solid fa-award"></i>
+                    <div>
+                        <h4>Professional Quality</h4>
+                        <p>Stunning Visual Stories</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-grid">
+            <div class="about-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800" alt="Raymes Angelo Entero - Tikeshe Visuals Photographer">
+            </div>
+            <div class="about-content">
+                <span class="section-tag">The Artist Behind The Lens</span>
+                <h3>Capturing Life's Most Genuine Chapters</h3>
+                <p>
+                    Hello! I am <strong>Raymes Angelo Entero</strong>, the creator behind <strong>Tikeshe Visuals</strong>. Based in the heart of New Town, North Dakota, my mission is to freeze authentic emotions, athletic triumphs, tender family bonds, and romantic milestones into breathtaking imagery you will cherish for a lifetime.
+                </p>
+                <div class="about-features">
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Portraits</div>
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Sports Action</div>
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Family & Lifestyle</div>
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Couples & Weddings</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / Rates Section -->
+    <section class="pricing-section" id="rates">
+        <div class="section-header">
+            <span class="section-tag">Investment & Pricing</span>
+            <h2>Photography Rates</h2>
+            <p>Choose the session package that fits your vision. Flexible locations and tailored attention for every single client.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Standard Package -->
+            <div class="pricing-card">
+                <div>
+                    <span class="pricing-tier">Standard Session</span>
+                    <div class="price">$200</div>
+                    <span class="locations-tag"><i class="fa-solid fa-map-pin"></i> 3 Locations</span>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fa-solid fa-user"></i> Portraits</li>
+                    <li><i class="fa-solid fa-basketball"></i> Sports Action</li>
+                    <li><i class="fa-solid fa-people-roof"></i> Family Sessions</li>
+                    <li><i class="fa-solid fa-heart"></i> Couples</li>
+                    <li><i class="fa-solid fa-camera"></i> Lifestyle & More</li>
+                </ul>
+                <button class="btn-pricing" onclick="selectPackage('$200 - 3 Locations Package')">Book $200 Package</button>
+            </div>
+
+            <!-- Most Popular Package -->
+            <div class="pricing-card popular">
+                <span class="popular-badge">Most Popular</span>
+                <div>
+                    <span class="pricing-tier">Popular Session</span>
+                    <div class="price">$250</div>
+                    <span class="locations-tag"><i class="fa-solid fa-map-pin"></i> 4 Locations</span>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fa-solid fa-user"></i> Portraits</li>
+                    <li><i class="fa-solid fa-basketball"></i> Sports Action</li>
+                    <li><i class="fa-solid fa-people-roof"></i> Family Sessions</li>
+                    <li><i class="fa-solid fa-heart"></i> Couples</li>
+                    <li><i class="fa-solid fa-camera"></i> Lifestyle & More</li>
+                </ul>
+                <button class="btn-pricing" onclick="selectPackage('$250 - 4 Locations Package')">Book $250 Package</button>
+            </div>
+
+            <!-- Ultimate Package -->
+            <div class="pricing-card">
+                <div>
+                    <span class="pricing-tier">Ultimate Session</span>
+                    <div class="price">$300</div>
+                    <span class="locations-tag"><i class="fa-solid fa-map-pin"></i> 5 Locations</span>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fa-solid fa-user"></i> Portraits</li>
+                    <li><i class="fa-solid fa-basketball"></i> Sports Action</li>
+                    <li><i class="fa-solid fa-people-roof"></i> Family Sessions</li>
+                    <li><i class="fa-solid fa-heart"></i> Couples</li>
+                    <li><i class="fa-solid fa-camera"></i> Lifestyle & More</li>
+                </ul>
+                <button class="btn-pricing" onclick="selectPackage('$300 - 5 Locations Package')">Book $300 Package</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="section-header">
+            <span class="section-tag">Visual Showcase</span>
+            <h2>Captured Moments</h2>
+            <p>Browse through portraits, sports action, family sessions, couples, and lifestyle captures.</p>
+        </div>
+
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="portrait">Portraits</button>
+            <button class="filter-btn" data-filter="sports">Sports</button>
+            <button class="filter-btn" data-filter="family">Family</button>
+            <button class="filter-btn" data-filter="couples">Couples</button>
+            <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-category="portrait">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" alt="Portrait">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Portrait</span>
+                    <h3 class="portfolio-title">Studio & Outdoor Portrait</h3>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="sports">
+                <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=80&w=800" alt="Sports">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Sports</span>
+                    <h3 class="portfolio-title">Court Action</h3>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="family">
+                <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&q=80&w=800" alt="Family">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Family</span>
+                    <h3 class="portfolio-title">Generations Together</h3>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="couples">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800" alt="Couples">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Couples</span>
+                    <h3 class="portfolio-title">Golden Hour Romance</h3>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="lifestyle">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800" alt="Lifestyle">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Lifestyle</span>
+                    <h3 class="portfolio-title">Candid & Natural Moments</h3>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="portrait">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Portrait">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">Portrait</span>
+                    <h3 class="portfolio-title">Expressive Portraiture</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Travel Info Section -->
+    <section id="location" style="background: var(--bg-card);">
+        <div class="travel-info-container">
+            <div class="info-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    <h4>Home Base</h4>
+                    <p>Proudly serving New Town, North Dakota and surrounding communities. Ready to travel to your favorite scenic spots or event venues.</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-car-side"></i>
+                <div>
+                    <h4>Outside Town?</h4>
+                    <p>Additional travel fee may apply depending on location. Contact us directly to discuss destination shoots and custom itineraries!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Booking Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-wrapper">
+            <div class="contact-form-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2>Connect With Raymes</h2>
+                <p>DM me to book your session or ask about availability!</p>
+            </div>
+
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="from_name">Your Name</label>
+                    <input type="text" id="from_name" name="from_name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reply_to">Email Address or Phone</label>
+                    <input type="text" id="reply_to" name="reply_to" placeholder="john@example.com / (555) 000-0000" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="package">Select Package / Session</label>
+                    <select id="package" name="package">
+                        <option value="$200 - 3 Locations Package">$200 - 3 Locations Package (Standard)</option>
+                        <option value="$250 - 4 Locations Package" selected>$250 - 4 Locations Package (Popular)</option>
+                        <option value="$300 - 5 Locations Package">$300 - 5 Locations Package (Ultimate)</option>
+                        <option value="Custom Session / Other">Custom Session / Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="message">Your Message / Details</label>
+                    <textarea id="message" name="message" placeholder="Tell me about your event or preferred dates..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+
+            <div class="social-connect">
+                <a href="https://facebook.com" target="_blank" class="social-link">
+                    <i class="fa-brands fa-facebook-f"></i> Raymes Angelo Entero
+                </a>
+                <a href="https://instagram.com" target="_blank" class="social-link">
+                    <i class="fa-brands fa-instagram"></i> @tikeshe_visuals
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-brand">TIKESHE VISUALS</div>
+        <p class="footer-quote">"Let's turn your moments into memories. ♡"</p>
+        <p class="copyright">&copy; 2026 Tikeshe Visuals by Raymes Angelo Entero. All rights reserved. Based in New Town, North Dakota.</p>
+    </footer>
+
+    <!-- JavaScript for Filtering and EmailJS Submission -->
+    <script>
+        // Portfolio Filter Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Quick Package Selector to pre-select package in form
+        function selectPackage(packageName) {
+            const packageSelect = document.getElementById('package');
+            for (let i = 0; i < packageSelect.options.length; i++) {
+                if (packageSelect.options[i].value === packageName) {
+                    packageSelect.selectedIndex = i;
+                    break;
+                }
+            }
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // EmailJS Form Integration (Owner Notification + Client Auto-Reply)
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent standard page reload
+
+            const form = this;
+            const clientEmail = document.getElementById('reply_to').value;
+            const clientName = document.getElementById('from_name').value;
+            const selectedPackage = document.getElementById('package').value;
+            const clientMessage = document.getElementById('message').value;
+
+            // 1. Send notification email to YOU
+            emailjs.sendForm('service_hhbe19t', 'template_f3wnbib', form)
+                .then(() => {
+                    // 2. Send auto-reply confirmation email to the CLIENT
+                    // Make sure to replace 'YOUR_NEW_AUTO_REPLY_TEMPLATE_ID' with your actual template ID from EmailJS
+                    return emailjs.send('service_hhbe19t', 'template_5f22wcs', {
+                        to_email: clientEmail,
+                        from_name: clientName,
+                        reply_to: clientEmail,
+                        package: selectedPackage,
+                        message: clientMessage
+                    });
+                })
+                .then(() => {
+                    alert('Success! Your message has been sent to Raymes, and a confirmation email has been sent to the client.');
+                    form.reset();
+                }, (error) => {
+                    alert('Failed to send message. Please check your console for details.');
+                    console.error('EmailJS Error:', error);
+                });
+        });
+    </script>
+</body>
+</html>
